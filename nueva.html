@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JIB 2026 - Jornadas de Ingeniería Biomédica</title>
+  <style>
+    :root {
+      --azul-profundo: #0E3441;
+      --azul-medio: #3491B1;
+      --azul-claro: #B8E9F1;
+      --verde-azulado: #5FB8CD;
+      --gris-oscuro: #416E6F;
+      --gris-claro: #C0DBE3;
+      --negro: #060E15;
+      --beige: #AFA099;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--negro);
+    }
+
+    header {
+      background-color: var(--azul-profundo);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    nav {
+      background-color: var(--verde-azulado);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+      margin: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      background-color: var(--azul-profundo);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    window.onload = () => {
+      showSection('inicio');
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+          e.preventDefault();
+          const target = link.getAttribute('href').substring(1);
+          showSection(target);
+        });
+      });
+    };
+  </script>
+</head>
+<body>
+  <header>
+    <h1>JIB 2026</h1>
+    <p>Jornadas de Ingeniería Biomédica</p>
+  </header>
+
+  <nav>
+    </a>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre">Sobre las JIB</a>
+    <a href="#programa">Programa</a>
+    <a href="#ponentes">Ponentes</a>
+    <a href="#inscripcion">Inscripción</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#galeria">Galería</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenida</h2>
+    <p>Las Jornadas de Ingeniería Biomédica 2026 reúnen a estudiantes, investigadores y profesionales para compartir avances, ideas y experiencias en el campo de la ingeniería biomédica.</p>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre las JIB</h2>
+    <p>Conoce la historia, objetivos y el equipo organizador detrás de este evento anual.</p>
+  </section>
+
+  <section id="programa">
+    <h2>Programa</h2>
+    <p>Consulta la agenda completa de actividades, charlas y talleres.</p>
+  </section>
+
+  <section id="ponentes">
+    <h2>Ponentes</h2>
+    <p>Descubre quiénes serán los expertos invitados y sus áreas de especialización.</p>
+  </section>
+
+  <section id="inscripcion">
+    <h2>Inscripción</h2>
+    <p>Regístrate para participar en las jornadas. ¡No te lo pierdas!</p>
+  </section>
+
+  <section id="ubicacion">
+    <h2>Ubicación</h2>
+    <p>Información sobre el lugar del evento y cómo llegar.</p>
+  </section>
+
+  <section id="galeria">
+    <h2>Galería</h2>
+    <p>Revive momentos de ediciones anteriores a través de fotos y vídeos.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas? Escríbenos o síguenos en redes sociales.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Jornadas de Ingeniería Biomédica</p>
+  </footer>
+</body>
+</html>
